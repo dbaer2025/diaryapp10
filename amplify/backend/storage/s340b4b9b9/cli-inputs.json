@@ -1,0 +1,14 @@
+{
+  "resourceName": "s340b4b9b9",
+  "policyUUID": "40b4b9b9",
+  "bucketName": "noteapp3db9704eb473a46c0a8de40916f4e0664",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
