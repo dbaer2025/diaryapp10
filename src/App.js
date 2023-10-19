@@ -102,13 +102,19 @@ const App = ({ signOut }) => {
         </Flex>
       </View>
       <Heading level={2}>Current Notes</Heading>
+      <p><Text as="strong" color={'#666699'}>This is my bullet list</Text></p>
+      <ul>
+        <li>This is going to be my bullet list </li>
+        <li>Did I do the homework right </li>
+        <li>Hello </li>
+      </ul>
       <View margin="3rem 0">
       {notes.map((note) => (
   <Flex
     key={note.id || note.name}
     direction="row"
-    justifyContent="center"
-    alignItems="center"
+    justifyContent="right"
+    alignItems="right"
   >
     <Text as="strong" fontWeight={700}>
       {note.name}
