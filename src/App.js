@@ -101,7 +101,7 @@ const App = ({ signOut }) => {
           </Button>
         </Flex>
       </View>
-      <Heading level={2}>Current Notes</Heading>
+      <Heading level={4}>Current Notes</Heading>
       <p><Text as="strong" color={'#666699'}>This is my bullet list</Text></p>
       <ul>
         <li>This is going to be my bullet list </li>
@@ -113,8 +113,8 @@ const App = ({ signOut }) => {
   <Flex
     key={note.id || note.name}
     direction="row"
-    justifyContent="right"
-    alignItems="right"
+    justifyContent="center"
+    alignItems="left"
   >
     <Text as="strong" fontWeight={700}>
       {note.name}
