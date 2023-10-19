@@ -102,6 +102,7 @@ const App = ({ signOut }) => {
         </Flex>
       </View>
       <Heading level={4}>Current Notes</Heading>
+      <table border="0.5px" align="center"><tbody><tr><td>
       <p><Text as="strong" color={'#666699'}>This is my bullet list</Text></p>
       <ul>
         <li>This is going to be my bullet list </li>
@@ -132,7 +133,7 @@ const App = ({ signOut }) => {
     </Button>
   </Flex>
 ))}
-      </View>
+      </View></td></tr></tbody></table>
       <Button onClick={signOut}>Sign Out</Button>
     </View>
   );
