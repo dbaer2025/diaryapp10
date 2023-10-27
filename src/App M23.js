@@ -105,8 +105,8 @@ const App = ({ signOut }) => {
       <table border="0.5px" align="center"><tbody><tr><td>
       <p><Text as="strong" color={'#666699'}>This is my bullet list</Text></p>
       <ul>
-        <li>This link goes to my quotes </li>
-        <li><a href="./hello.html">Quotes</a> </li>
+        <li>This is going to be my bullet list </li>
+        <li>Did I do the homework right </li>
         <li>Hello </li>
       </ul>
       <View margin="3rem 0">
