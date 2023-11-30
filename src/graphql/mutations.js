@@ -52,3 +52,56 @@ export const deleteNote = /* GraphQL */ `
     }
   }
 `;
+
+export const createDiary = /* GraphQL */ `
+  mutation CreateNote(
+    $input: CreateNoteInput!
+    $condition: ModelNoteConditionInput
+  ) {
+    createNote(input: $input, condition: $condition) {
+      id
+      name
+      description
+      image
+      author
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateDiary = /* GraphQL */ `
+  mutation UpdateNote(
+    $input: UpdateNoteInput!
+    $condition: ModelNoteConditionInput
+  ) {
+    updateNote(input: $input, condition: $condition) {
+      id
+      name
+      description
+      image
+      author
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteDiary = /* GraphQL */ `
+  mutation DeleteNote(
+    $input: DeleteNoteInput!
+    $condition: ModelNoteConditionInput
+  ) {
+    deleteNote(input: $input, condition: $condition) {
+      id
+      name
+      description
+      image
+      author
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+

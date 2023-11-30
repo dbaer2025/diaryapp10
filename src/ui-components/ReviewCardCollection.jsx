@@ -7,13 +7,13 @@
 /* eslint-disable */
 import * as React from "react";
 import { listNotes } from "../graphql/queries";
-import NoteCard from "./NoteCard";
+import ReviewCard from "./ReviewCard";
 import { getOverrideProps } from "./utils";
 import { Collection, Pagination, Placeholder } from "@aws-amplify/ui-react";
-import { API } from "aws-amplify";
+import { API, Storage } from "aws-amplify";
 const nextToken = {};
 const apiCache = {};
-export default function NoteCollection(props) {
+export default function ReviewCardCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
   const [pageIndex, setPageIndex] = React.useState(1);
   const [hasMorePages, setHasMorePages] = React.useState(true);
@@ -58,6 +58,16 @@ export default function NoteCollection(props) {
           variables,
         })
       ).data.listNotes;
+      const notesFromAPI = result.items
+       await Promise.all(
+              notesFromAPI.map(async (note) => {
+                if (note.image) {
+                  const url = await Storage.get(note.name);
+                  note.image = url;
+                }
+                return note;
+              })
+            );
       newCache.push(...result.items);
       newNext = result.nextToken;
     }
@@ -85,7 +95,7 @@ export default function NoteCollection(props) {
         itemsPerPage={pageSize}
         isPaginated={!isApiPagination && isPaginated}
         items={itemsProp || (loading ? new Array(pageSize).fill({}) : items)}
-        {...getOverrideProps(overrides, "NoteCollection")}
+        {...getOverrideProps(overrides, "ReviewCardCollection")}
         {...rest}
       >
         {(item, index) => {
@@ -93,11 +103,11 @@ export default function NoteCollection(props) {
             return <Placeholder key={index} size="large" />;
           }
           return (
-            <NoteCard
+            <ReviewCard
               note={item}
               key={item.id}
               {...(overrideItems && overrideItems({ item, index }))}
-            ></NoteCard>
+            ></ReviewCard>
           );
         }}
       </Collection>
