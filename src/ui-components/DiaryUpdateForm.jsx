@@ -25,20 +25,25 @@ export default function DiaryUpdateForm(props) {
   } = props;
   const initialValues = {
     name: "",
-    address: "",
-    website: "",
+    image: "",
+    description: "",
+    author: "",
   };
   const [name, setName] = React.useState(initialValues.name);
-  const [address, setAddress] = React.useState(initialValues.address);
-  const [website, setWebsite] = React.useState(initialValues.website);
+  const [image, setImage] = React.useState(initialValues.image);
+  const [description, setDescription] = React.useState(
+    initialValues.description
+  );
+  const [author, setAuthor] = React.useState(initialValues.author);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = diaryRecord
       ? { ...initialValues, ...diaryRecord }
       : initialValues;
     setName(cleanValues.name);
-    setAddress(cleanValues.address);
-    setWebsite(cleanValues.website);
+    setImage(cleanValues.image);
+    setDescription(cleanValues.description);
+    setAuthor(cleanValues.author);
     setErrors({});
   };
   const [diaryRecord, setDiaryRecord] = React.useState(diaryModelProp);
@@ -59,8 +64,9 @@ export default function DiaryUpdateForm(props) {
   React.useEffect(resetStateValues, [diaryRecord]);
   const validations = {
     name: [],
-    address: [],
-    website: [],
+    image: [],
+    description: [],
+    author: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -89,8 +95,9 @@ export default function DiaryUpdateForm(props) {
         event.preventDefault();
         let modelFields = {
           name: name ?? null,
-          address: address ?? null,
-          website: website ?? null,
+          image: image ?? null,
+          description: description ?? null,
+          author: author ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -152,8 +159,9 @@ export default function DiaryUpdateForm(props) {
           if (onChange) {
             const modelFields = {
               name: value,
-              address,
-              website,
+              image,
+              description,
+              author,
             };
             const result = onChange(modelFields);
             value = result?.name ?? value;
@@ -169,56 +177,85 @@ export default function DiaryUpdateForm(props) {
         {...getOverrideProps(overrides, "name")}
       ></TextField>
       <TextField
-        label="Address"
+        label="Image"
         isRequired={false}
         isReadOnly={false}
-        value={address}
+        value={image}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               name,
-              address: value,
-              website,
+              image: value,
+              description,
+              author,
             };
             const result = onChange(modelFields);
-            value = result?.address ?? value;
+            value = result?.image ?? value;
           }
-          if (errors.address?.hasError) {
-            runValidationTasks("address", value);
+          if (errors.image?.hasError) {
+            runValidationTasks("image", value);
           }
-          setAddress(value);
+          setImage(value);
         }}
-        onBlur={() => runValidationTasks("address", address)}
-        errorMessage={errors.address?.errorMessage}
-        hasError={errors.address?.hasError}
-        {...getOverrideProps(overrides, "address")}
+        onBlur={() => runValidationTasks("image", image)}
+        errorMessage={errors.image?.errorMessage}
+        hasError={errors.image?.hasError}
+        {...getOverrideProps(overrides, "image")}
       ></TextField>
       <TextField
-        label="Website"
+        label="Description"
         isRequired={false}
         isReadOnly={false}
-        value={website}
+        value={description}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               name,
-              address,
-              website: value,
+              image,
+              description: value,
+              author,
             };
             const result = onChange(modelFields);
-            value = result?.website ?? value;
+            value = result?.description ?? value;
           }
-          if (errors.website?.hasError) {
-            runValidationTasks("website", value);
+          if (errors.description?.hasError) {
+            runValidationTasks("description", value);
           }
-          setWebsite(value);
+          setDescription(value);
         }}
-        onBlur={() => runValidationTasks("website", website)}
-        errorMessage={errors.website?.errorMessage}
-        hasError={errors.website?.hasError}
-        {...getOverrideProps(overrides, "website")}
+        onBlur={() => runValidationTasks("description", description)}
+        errorMessage={errors.description?.errorMessage}
+        hasError={errors.description?.hasError}
+        {...getOverrideProps(overrides, "description")}
+      ></TextField>
+      <TextField
+        label="Author"
+        isRequired={false}
+        isReadOnly={false}
+        value={author}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              name,
+              image,
+              description,
+              author: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.author ?? value;
+          }
+          if (errors.author?.hasError) {
+            runValidationTasks("author", value);
+          }
+          setAuthor(value);
+        }}
+        onBlur={() => runValidationTasks("author", author)}
+        errorMessage={errors.author?.errorMessage}
+        hasError={errors.author?.hasError}
+        {...getOverrideProps(overrides, "author")}
       ></TextField>
       <Flex
         justifyContent="space-between"

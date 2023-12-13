@@ -12,7 +12,6 @@ import {
   Divider,
   Flex,
   Icon,
-  Image,
   Text,
   TextField,
   View,
@@ -21,10 +20,10 @@ export default function UINewReview(props) {
   const { overrides, ...rest } = props;
   return (
     <Flex
-      gap="0"
+      gap="16px"
       direction="column"
       width="320px"
-      height="490px"
+      height="unset"
       justifyContent="flex-start"
       alignItems="flex-start"
       position="relative"
@@ -37,7 +36,7 @@ export default function UINewReview(props) {
         gap="24px"
         direction="column"
         width="unset"
-        height="490px"
+        height="unset"
         justifyContent="flex-start"
         alignItems="flex-start"
         shrink="0"
@@ -124,58 +123,8 @@ export default function UINewReview(props) {
           alignSelf="stretch"
           size="small"
           orientation="horizontal"
-          {...getOverrideProps(overrides, "Divider29766917")}
+          {...getOverrideProps(overrides, "Divider4075334")}
         ></Divider>
-        <Flex
-          gap="16px"
-          direction="row"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
-          alignItems="center"
-          shrink="0"
-          alignSelf="stretch"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          {...getOverrideProps(overrides, "Profile")}
-        >
-          <Image
-            width="96px"
-            height="96px"
-            display="block"
-            gap="unset"
-            alignItems="unset"
-            justifyContent="unset"
-            shrink="0"
-            position="relative"
-            borderRadius="160px"
-            padding="0px 0px 0px 0px"
-            objectFit="cover"
-            {...getOverrideProps(overrides, "image")}
-          ></Image>
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="400"
-            color="rgba(13,26,38,1)"
-            lineHeight="22px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            textDecoration="underline"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Upload Food Image"
-            {...getOverrideProps(overrides, "Upload Food Image")}
-          ></Text>
-        </Flex>
         <Flex
           gap="16px"
           direction="column"
@@ -199,33 +148,31 @@ export default function UINewReview(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
-            {...getOverrideProps(overrides, "TextField4069235")}
+            {...getOverrideProps(overrides, "TextField4075415")}
           ></TextField>
           <TextField
-            width="unset"
+            width="272px"
             height="unset"
-            label="Address"
-            placeholder="12345 Robot Hamster Ln"
+            label="Image Link"
+            placeholder="http://www.example.com"
             shrink="0"
-            alignSelf="stretch"
             size="default"
             isDisabled={false}
             labelHidden={false}
             variation="default"
-            {...getOverrideProps(overrides, "TextField29766923")}
+            {...getOverrideProps(overrides, "TextField4075436")}
           ></TextField>
           <TextField
-            width="unset"
+            width="272px"
             height="unset"
             label="Written Review"
             placeholder="It was good..."
             shrink="0"
-            alignSelf="stretch"
             size="default"
             isDisabled={false}
             labelHidden={false}
             variation="default"
-            {...getOverrideProps(overrides, "TextField29766924")}
+            {...getOverrideProps(overrides, "TextField4075443")}
           ></TextField>
         </Flex>
         <Divider
@@ -235,48 +182,34 @@ export default function UINewReview(props) {
           alignSelf="stretch"
           size="small"
           orientation="horizontal"
-          {...getOverrideProps(overrides, "Divider29766925")}
+          {...getOverrideProps(overrides, "Divider4075339")}
         ></Divider>
-      </Flex>
-      <View
-        width="320px"
-        height="76px"
-        display="block"
-        gap="unset"
-        alignItems="unset"
-        justifyContent="unset"
-        overflow="hidden"
-        shrink="0"
-        position="relative"
-        padding="0px 0px 0px 0px"
-        backgroundColor="rgba(255,255,255,1)"
-        {...getOverrideProps(overrides, "Frame 323")}
-      >
         <Flex
-          gap="16px"
-          direction="row"
-          width="320px"
-          height="64px"
+          gap="10px"
+          direction="column"
+          width="272px"
+          height="unset"
           justifyContent="center"
-          alignItems="flex-start"
-          position="absolute"
-          top="6px"
-          left="0px"
-          padding="16px 16px 16px 16px"
-          {...getOverrideProps(overrides, "Card Area")}
+          alignItems="center"
+          overflow="hidden"
+          shrink="0"
+          position="relative"
+          padding="13px 46px 13px 46px"
+          {...getOverrideProps(overrides, "Frame 322")}
         >
           <Button
-            width="140px"
-            height="40px"
+            width="142px"
+            height="unset"
             shrink="0"
+            backgroundColor="rgba(67,168,84,1)"
             size="default"
             isDisabled={false}
-            variation="primary"
+            variation="default"
             children="Create"
             {...getOverrideProps(overrides, "Button")}
           ></Button>
         </Flex>
-      </View>
+      </Flex>
     </Flex>
   );
 }

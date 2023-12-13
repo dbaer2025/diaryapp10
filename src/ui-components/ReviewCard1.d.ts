@@ -5,7 +5,8 @@
  **************************************************************************/
 
 import * as React from "react";
-import { FlexProps, ImageProps, TextProps } from "@aws-amplify/ui-react";
+import { ButtonProps, FlexProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
+import { MyIconProps } from "./MyIcon";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -17,18 +18,19 @@ export declare type Variant = {
     overrides: EscapeHatchProps;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type NoteCardOverridesProps = {
-    NoteCard?: PrimitiveOverrideProps<FlexProps>;
+export declare type ReviewCard1OverridesProps = {
+    ReviewCard1?: PrimitiveOverrideProps<FlexProps>;
     image?: PrimitiveOverrideProps<ImageProps>;
+    "Frame 324"?: PrimitiveOverrideProps<ViewProps>;
+    MyIcon?: MyIconProps;
+    Button?: PrimitiveOverrideProps<ButtonProps>;
     "Card Area"?: PrimitiveOverrideProps<FlexProps>;
     "Text Group"?: PrimitiveOverrideProps<FlexProps>;
-    "$99 USD"?: PrimitiveOverrideProps<TextProps>;
-    "4bds 3 ba 2,530 sqft - Active"?: PrimitiveOverrideProps<TextProps>;
-    "832 34th Ave, Seattle, WA 98122"?: PrimitiveOverrideProps<TextProps>;
+    "Name of Restaurant"?: PrimitiveOverrideProps<TextProps>;
+    "Writer/Author"?: PrimitiveOverrideProps<TextProps>;
+    "Description of Review"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
-export declare type NoteCardProps = React.PropsWithChildren<Partial<FlexProps> & {
-    note?: any;
-} & {
-    overrides?: NoteCardOverridesProps | undefined | null;
+export declare type ReviewCard1Props = React.PropsWithChildren<Partial<FlexProps> & {
+    overrides?: ReviewCard1OverridesProps | undefined | null;
 }>;
-export default function NoteCard(props: NoteCardProps): React.ReactElement;
+export default function ReviewCard1(props: ReviewCard1Props): React.ReactElement;

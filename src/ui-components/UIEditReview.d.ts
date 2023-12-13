@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { ButtonProps, DividerProps, FlexProps, IconProps, ImageProps, TextFieldProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
+import { ButtonProps, DividerProps, FlexProps, IconProps, TextFieldProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -23,20 +23,15 @@ export declare type UIEditReviewOverridesProps = {
     "Edit Profile"?: PrimitiveOverrideProps<FlexProps>;
     Icon?: PrimitiveOverrideProps<ViewProps>;
     Vector?: PrimitiveOverrideProps<IconProps>;
-    "Create Review"?: PrimitiveOverrideProps<TextProps>;
-    Divider4113489?: PrimitiveOverrideProps<DividerProps>;
-    Profile?: PrimitiveOverrideProps<FlexProps>;
-    image?: PrimitiveOverrideProps<ImageProps>;
-    "Upload Food Image"?: PrimitiveOverrideProps<TextProps>;
+    "Edit Review"?: PrimitiveOverrideProps<TextProps>;
+    Divider4075319?: PrimitiveOverrideProps<DividerProps>;
     Forms?: PrimitiveOverrideProps<FlexProps>;
-    TextField4113494?: PrimitiveOverrideProps<TextFieldProps>;
-    TextField4113495?: PrimitiveOverrideProps<TextFieldProps>;
-    TextField4113496?: PrimitiveOverrideProps<TextFieldProps>;
-    Divider4113497?: PrimitiveOverrideProps<DividerProps>;
-    "Frame 322"?: PrimitiveOverrideProps<ViewProps>;
-    "Card Area"?: PrimitiveOverrideProps<FlexProps>;
-    Button4113321?: PrimitiveOverrideProps<ButtonProps>;
-    Button4113325?: PrimitiveOverrideProps<ButtonProps>;
+    TextField4075450?: PrimitiveOverrideProps<TextFieldProps>;
+    TextField4075471?: PrimitiveOverrideProps<TextFieldProps>;
+    TextField4075478?: PrimitiveOverrideProps<TextFieldProps>;
+    Divider4075324?: PrimitiveOverrideProps<DividerProps>;
+    "Frame 322"?: PrimitiveOverrideProps<FlexProps>;
+    Button?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
 export declare type UIEditReviewProps = React.PropsWithChildren<Partial<FlexProps> & {
     overrides?: UIEditReviewOverridesProps | undefined | null;

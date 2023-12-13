@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { ButtonProps, DividerProps, FlexProps, IconProps, ImageProps, TextFieldProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
+import { ButtonProps, DividerProps, FlexProps, IconProps, TextFieldProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -24,17 +24,13 @@ export declare type UINewReviewOverridesProps = {
     Icon?: PrimitiveOverrideProps<ViewProps>;
     Vector?: PrimitiveOverrideProps<IconProps>;
     "Create Review"?: PrimitiveOverrideProps<TextProps>;
-    Divider29766917?: PrimitiveOverrideProps<DividerProps>;
-    Profile?: PrimitiveOverrideProps<FlexProps>;
-    image?: PrimitiveOverrideProps<ImageProps>;
-    "Upload Food Image"?: PrimitiveOverrideProps<TextProps>;
+    Divider4075334?: PrimitiveOverrideProps<DividerProps>;
     Forms?: PrimitiveOverrideProps<FlexProps>;
-    TextField4069235?: PrimitiveOverrideProps<TextFieldProps>;
-    TextField29766923?: PrimitiveOverrideProps<TextFieldProps>;
-    TextField29766924?: PrimitiveOverrideProps<TextFieldProps>;
-    Divider29766925?: PrimitiveOverrideProps<DividerProps>;
-    "Frame 323"?: PrimitiveOverrideProps<ViewProps>;
-    "Card Area"?: PrimitiveOverrideProps<FlexProps>;
+    TextField4075415?: PrimitiveOverrideProps<TextFieldProps>;
+    TextField4075436?: PrimitiveOverrideProps<TextFieldProps>;
+    TextField4075443?: PrimitiveOverrideProps<TextFieldProps>;
+    Divider4075339?: PrimitiveOverrideProps<DividerProps>;
+    "Frame 322"?: PrimitiveOverrideProps<FlexProps>;
     Button?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
 export declare type UINewReviewProps = React.PropsWithChildren<Partial<FlexProps> & {

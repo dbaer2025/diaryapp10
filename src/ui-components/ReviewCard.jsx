@@ -7,9 +7,10 @@
 /* eslint-disable */
 import * as React from "react";
 import { getOverrideProps } from "./utils";
-import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
+import { Button, Flex, Image, Text, View } from "@aws-amplify/ui-react";
+import MyIcon from "./MyIcon";
 export default function ReviewCard(props) {
-  const { note, overrides, ...rest } = props;
+  const { overrides, ...rest } = props;
   return (
     <Flex
       gap="0"
@@ -36,11 +37,79 @@ export default function ReviewCard(props) {
         position="relative"
         padding="0px 0px 0px 0px"
         objectFit="cover"
-        src={note?.image}
         {...getOverrideProps(overrides, "image")}
       ></Image>
+      <View
+        width="320px"
+        height="34px"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        overflow="hidden"
+        shrink="0"
+        position="relative"
+        padding="0px 0px 0px 0px"
+        backgroundColor="rgba(255,255,255,1)"
+        {...getOverrideProps(overrides, "Frame 324")}
+      >
+        <MyIcon
+          width="24px"
+          height="24px"
+          display="block"
+          gap="unset"
+          alignItems="unset"
+          justifyContent="unset"
+          overflow="hidden"
+          position="absolute"
+          top="5px"
+          left="9px"
+          padding="0px 0px 0px 0px"
+          type="edit"
+          {...getOverrideProps(overrides, "MyIcon4089123")}
+        ></MyIcon>
+        <MyIcon
+          width="24px"
+          height="24px"
+          display="block"
+          gap="unset"
+          alignItems="unset"
+          justifyContent="unset"
+          overflow="hidden"
+          position="absolute"
+          top="5px"
+          left="287px"
+          padding="0px 0px 0px 0px"
+          type="delete"
+          {...getOverrideProps(overrides, "MyIcon4117139")}
+        ></MyIcon>
+        <Button
+          width="42px"
+          height="34px"
+          position="absolute"
+          borderRadius="4px"
+          top="0px"
+          left="0px"
+          size="default"
+          isDisabled={false}
+          variation="default"
+          {...getOverrideProps(overrides, "Button411762")}
+        ></Button>
+        <Button
+          width="42px"
+          height="34px"
+          position="absolute"
+          borderRadius="4px"
+          top="0px"
+          left="278px"
+          size="default"
+          isDisabled={false}
+          variation="default"
+          {...getOverrideProps(overrides, "Button409265")}
+        ></Button>
+      </View>
       <Flex
-        gap="16px"
+        gap="0"
         direction="column"
         width="unset"
         height="106px"
@@ -50,7 +119,7 @@ export default function ReviewCard(props) {
         alignSelf="stretch"
         position="relative"
         padding="16px 16px 16px 16px"
-        {...getOverrideProps(overrides, "Card Area29766786")}
+        {...getOverrideProps(overrides, "Card Area")}
       >
         <Flex
           gap="8px"
@@ -84,7 +153,7 @@ export default function ReviewCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={note?.name}
+            children="Name of Restaurant"
             {...getOverrideProps(overrides, "Name of Restaurant")}
           ></Text>
           <Text
@@ -107,8 +176,8 @@ export default function ReviewCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={note?.description}
-            {...getOverrideProps(overrides, "Stars of out 5")}
+            children="Writer/Author"
+            {...getOverrideProps(overrides, "Writer/Author")}
           ></Text>
           <Text
             fontFamily="Inter"
@@ -129,44 +198,10 @@ export default function ReviewCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={note?.author}
+            children="Description of Review"
             {...getOverrideProps(overrides, "Description of Review")}
           ></Text>
         </Flex>
-      </Flex>
-      <Flex
-        gap="16px"
-        direction="row"
-        width="unset"
-        height="64px"
-        justifyContent="center"
-        alignItems="flex-start"
-        shrink="0"
-        alignSelf="stretch"
-        position="relative"
-        padding="16px 16px 16px 16px"
-        {...getOverrideProps(overrides, "Card Area4113140")}
-      >
-        <Button
-          width="122px"
-          height="unset"
-          shrink="0"
-          size="default"
-          isDisabled={false}
-          variation="default"
-          children="Location"
-          {...getOverrideProps(overrides, "Button4113145")}
-        ></Button>
-        <Button
-          width="122px"
-          height="unset"
-          shrink="0"
-          size="default"
-          isDisabled={false}
-          variation="default"
-          children="Website"
-          {...getOverrideProps(overrides, "Button4113146")}
-        ></Button>
       </Flex>
     </Flex>
   );

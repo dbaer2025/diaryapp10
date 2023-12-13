@@ -23,20 +23,23 @@ export declare type ValidationResponse = {
 export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
 export declare type DiaryUpdateFormInputValues = {
     name?: string;
-    address?: string;
-    website?: string;
+    image?: string;
+    description?: string;
+    author?: string;
 };
 export declare type DiaryUpdateFormValidationValues = {
     name?: ValidationFunction<string>;
-    address?: ValidationFunction<string>;
-    website?: ValidationFunction<string>;
+    image?: ValidationFunction<string>;
+    description?: ValidationFunction<string>;
+    author?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type DiaryUpdateFormOverridesProps = {
     DiaryUpdateFormGrid?: PrimitiveOverrideProps<GridProps>;
     name?: PrimitiveOverrideProps<TextFieldProps>;
-    address?: PrimitiveOverrideProps<TextFieldProps>;
-    website?: PrimitiveOverrideProps<TextFieldProps>;
+    image?: PrimitiveOverrideProps<TextFieldProps>;
+    description?: PrimitiveOverrideProps<TextFieldProps>;
+    author?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type DiaryUpdateFormProps = React.PropsWithChildren<{
     overrides?: DiaryUpdateFormOverridesProps | undefined | null;

@@ -6,6 +6,7 @@ import Amplify from "@aws-amplify/core";
 import { AmplifyProvider } from '@aws-amplify/ui-react';
 import awsConfig from './aws-exports';
 import {BrowserRouter} from 'react-router-dom'
+import "@aws-amplify/ui-react/styles.css";
 const container = document.getElementById("root")
 const root = createRoot(container)
 

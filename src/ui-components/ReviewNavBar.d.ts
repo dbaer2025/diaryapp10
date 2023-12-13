@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { FlexProps, IconProps, TextProps } from "@aws-amplify/ui-react";
+import { ButtonProps, FlexProps, TextProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -23,7 +23,7 @@ export declare type ReviewNavBarOverridesProps = {
     "Food Diary"?: PrimitiveOverrideProps<TextProps>;
     "Frame 321"?: PrimitiveOverrideProps<FlexProps>;
     "Home Page"?: PrimitiveOverrideProps<TextProps>;
-    "Line 2"?: PrimitiveOverrideProps<IconProps>;
+    Button?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
 export declare type ReviewNavBarProps = React.PropsWithChildren<Partial<FlexProps> & {
     overrides?: ReviewNavBarOverridesProps | undefined | null;

@@ -12,7 +12,6 @@ import {
   Divider,
   Flex,
   Icon,
-  Image,
   Text,
   TextField,
   View,
@@ -21,10 +20,10 @@ export default function UIEditReview(props) {
   const { overrides, ...rest } = props;
   return (
     <Flex
-      gap="0"
+      gap="16px"
       direction="column"
       width="320px"
-      height="490px"
+      height="unset"
       justifyContent="flex-start"
       alignItems="flex-start"
       position="relative"
@@ -37,7 +36,7 @@ export default function UIEditReview(props) {
         gap="24px"
         direction="column"
         width="unset"
-        height="490px"
+        height="unset"
         justifyContent="flex-start"
         alignItems="flex-start"
         shrink="0"
@@ -113,8 +112,8 @@ export default function UIEditReview(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="Create Review"
-            {...getOverrideProps(overrides, "Create Review")}
+            children="Edit Review"
+            {...getOverrideProps(overrides, "Edit Review")}
           ></Text>
         </Flex>
         <Divider
@@ -124,58 +123,8 @@ export default function UIEditReview(props) {
           alignSelf="stretch"
           size="small"
           orientation="horizontal"
-          {...getOverrideProps(overrides, "Divider4113489")}
+          {...getOverrideProps(overrides, "Divider4075319")}
         ></Divider>
-        <Flex
-          gap="16px"
-          direction="row"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
-          alignItems="center"
-          shrink="0"
-          alignSelf="stretch"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          {...getOverrideProps(overrides, "Profile")}
-        >
-          <Image
-            width="96px"
-            height="96px"
-            display="block"
-            gap="unset"
-            alignItems="unset"
-            justifyContent="unset"
-            shrink="0"
-            position="relative"
-            borderRadius="160px"
-            padding="0px 0px 0px 0px"
-            objectFit="cover"
-            {...getOverrideProps(overrides, "image")}
-          ></Image>
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="400"
-            color="rgba(13,26,38,1)"
-            lineHeight="22px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            textDecoration="underline"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Upload Food Image"
-            {...getOverrideProps(overrides, "Upload Food Image")}
-          ></Text>
-        </Flex>
         <Flex
           gap="16px"
           direction="column"
@@ -199,33 +148,31 @@ export default function UIEditReview(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
-            {...getOverrideProps(overrides, "TextField4113494")}
+            {...getOverrideProps(overrides, "TextField4075450")}
           ></TextField>
           <TextField
-            width="unset"
+            width="272px"
             height="unset"
-            label="Address"
-            placeholder="12345 Robot Hamster Ln"
+            label="Image Link"
+            placeholder="http://www.example.com"
             shrink="0"
-            alignSelf="stretch"
             size="default"
             isDisabled={false}
             labelHidden={false}
             variation="default"
-            {...getOverrideProps(overrides, "TextField4113495")}
+            {...getOverrideProps(overrides, "TextField4075471")}
           ></TextField>
           <TextField
-            width="unset"
+            width="272px"
             height="unset"
             label="Written Review"
             placeholder="It was good..."
             shrink="0"
-            alignSelf="stretch"
             size="default"
             isDisabled={false}
             labelHidden={false}
             variation="default"
-            {...getOverrideProps(overrides, "TextField4113496")}
+            {...getOverrideProps(overrides, "TextField4075478")}
           ></TextField>
         </Flex>
         <Divider
@@ -235,59 +182,35 @@ export default function UIEditReview(props) {
           alignSelf="stretch"
           size="small"
           orientation="horizontal"
-          {...getOverrideProps(overrides, "Divider4113497")}
+          {...getOverrideProps(overrides, "Divider4075324")}
         ></Divider>
-      </Flex>
-      <View
-        width="320px"
-        height="76px"
-        display="block"
-        gap="unset"
-        alignItems="unset"
-        justifyContent="unset"
-        overflow="hidden"
-        shrink="0"
-        position="relative"
-        padding="0px 0px 0px 0px"
-        backgroundColor="rgba(255,255,255,1)"
-        {...getOverrideProps(overrides, "Frame 322")}
-      >
         <Flex
-          gap="16px"
+          gap="25px"
           direction="row"
-          width="320px"
-          height="64px"
+          width="272px"
+          height="unset"
           justifyContent="center"
-          alignItems="flex-start"
-          position="absolute"
-          top="6px"
-          left="0px"
-          padding="16px 16px 16px 16px"
-          {...getOverrideProps(overrides, "Card Area")}
+          alignItems="center"
+          overflow="hidden"
+          shrink="0"
+          position="relative"
+          padding="13px 39px 13px 39px"
+          {...getOverrideProps(overrides, "Frame 322")}
         >
           <Button
-            width="100px"
+            width="140px"
             height="unset"
+            borderRadius="4px"
             shrink="0"
+            backgroundColor="rgba(67,168,84,1)"
             size="default"
             isDisabled={false}
-            variation="primary"
+            variation="default"
             children="Save"
-            {...getOverrideProps(overrides, "Button4113321")}
-          ></Button>
-          <Button
-            width="100px"
-            height="unset"
-            shrink="0"
-            backgroundColor="rgba(149,4,4,1)"
-            size="default"
-            isDisabled={false}
-            variation="primary"
-            children="Delete"
-            {...getOverrideProps(overrides, "Button4113325")}
+            {...getOverrideProps(overrides, "Button")}
           ></Button>
         </Flex>
-      </View>
+      </Flex>
     </Flex>
   );
 }

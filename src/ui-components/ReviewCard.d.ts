@@ -5,7 +5,8 @@
  **************************************************************************/
 
 import * as React from "react";
-import { ButtonProps, FlexProps, ImageProps, TextProps } from "@aws-amplify/ui-react";
+import { ButtonProps, FlexProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
+import { MyIconProps } from "./MyIcon";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -20,18 +21,18 @@ export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes
 export declare type ReviewCardOverridesProps = {
     ReviewCard?: PrimitiveOverrideProps<FlexProps>;
     image?: PrimitiveOverrideProps<ImageProps>;
-    "Card Area29766786"?: PrimitiveOverrideProps<FlexProps>;
+    "Frame 324"?: PrimitiveOverrideProps<ViewProps>;
+    MyIcon4089123?: MyIconProps;
+    MyIcon4117139?: MyIconProps;
+    Button411762?: PrimitiveOverrideProps<ButtonProps>;
+    Button409265?: PrimitiveOverrideProps<ButtonProps>;
+    "Card Area"?: PrimitiveOverrideProps<FlexProps>;
     "Text Group"?: PrimitiveOverrideProps<FlexProps>;
     "Name of Restaurant"?: PrimitiveOverrideProps<TextProps>;
-    "Stars of out 5"?: PrimitiveOverrideProps<TextProps>;
+    "Writer/Author"?: PrimitiveOverrideProps<TextProps>;
     "Description of Review"?: PrimitiveOverrideProps<TextProps>;
-    "Card Area4113140"?: PrimitiveOverrideProps<FlexProps>;
-    Button4113145?: PrimitiveOverrideProps<ButtonProps>;
-    Button4113146?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
 export declare type ReviewCardProps = React.PropsWithChildren<Partial<FlexProps> & {
-    note?: any;
-} & {
     overrides?: ReviewCardOverridesProps | undefined | null;
 }>;
 export default function ReviewCard(props: ReviewCardProps): React.ReactElement;

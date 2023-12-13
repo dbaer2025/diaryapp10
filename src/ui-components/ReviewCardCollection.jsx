@@ -6,11 +6,11 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { listNotes } from "../graphql/queries";
+import { listDiaries } from "../graphql/queries";
 import ReviewCard from "./ReviewCard";
 import { getOverrideProps } from "./utils";
 import { Collection, Pagination, Placeholder } from "@aws-amplify/ui-react";
-import { API, Storage } from "aws-amplify";
+import { API } from "aws-amplify";
 const nextToken = {};
 const apiCache = {};
 export default function ReviewCardCollection(props) {
@@ -54,20 +54,10 @@ export default function ReviewCardCollection(props) {
       }
       const result = (
         await API.graphql({
-          query: listNotes.replaceAll("__typename", ""),
+          query: listDiaries.replaceAll("__typename", ""),
           variables,
         })
-      ).data.listNotes;
-      const notesFromAPI = result.items
-       await Promise.all(
-              notesFromAPI.map(async (note) => {
-                if (note.image) {
-                  const url = await Storage.get(note.name);
-                  note.image = url;
-                }
-                return note;
-              })
-            );
+      ).data.listDiaries;
       newCache.push(...result.items);
       newNext = result.nextToken;
     }
@@ -104,7 +94,6 @@ export default function ReviewCardCollection(props) {
           }
           return (
             <ReviewCard
-              note={item}
               key={item.id}
               {...(overrideItems && overrideItems({ item, index }))}
             ></ReviewCard>

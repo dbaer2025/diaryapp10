@@ -7,21 +7,22 @@
 /* eslint-disable */
 import * as React from "react";
 import { getOverrideProps } from "./utils";
-import { Flex, Image, Text } from "@aws-amplify/ui-react";
-export default function NoteCard(props) {
-  const { note, overrides, ...rest } = props;
+import { Button, Flex, Image, Text, View } from "@aws-amplify/ui-react";
+import MyIcon from "./MyIcon";
+export default function ReviewCard1(props) {
+  const { overrides, ...rest } = props;
   return (
     <Flex
       gap="0"
       direction="column"
       width="320px"
-      height="unset"
+      height="330px"
       justifyContent="center"
       alignItems="flex-start"
       position="relative"
       padding="0px 0px 0px 0px"
       backgroundColor="rgba(255,255,255,1)"
-      {...getOverrideProps(overrides, "NoteCard")}
+      {...getOverrideProps(overrides, "ReviewCard1")}
       {...rest}
     >
       <Image
@@ -36,14 +37,55 @@ export default function NoteCard(props) {
         position="relative"
         padding="0px 0px 0px 0px"
         objectFit="cover"
-        src={note?.image}
         {...getOverrideProps(overrides, "image")}
       ></Image>
+      <View
+        width="320px"
+        height="34px"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        overflow="hidden"
+        shrink="0"
+        position="relative"
+        padding="0px 0px 0px 0px"
+        backgroundColor="rgba(255,255,255,1)"
+        {...getOverrideProps(overrides, "Frame 324")}
+      >
+        <MyIcon
+          width="24px"
+          height="24px"
+          display="block"
+          gap="unset"
+          alignItems="unset"
+          justifyContent="unset"
+          overflow="hidden"
+          position="absolute"
+          top="5px"
+          left="9px"
+          padding="0px 0px 0px 0px"
+          type="edit"
+          {...getOverrideProps(overrides, "MyIcon")}
+        ></MyIcon>
+        <Button
+          width="42px"
+          height="34px"
+          position="absolute"
+          borderRadius="4px"
+          top="0px"
+          left="0px"
+          size="default"
+          isDisabled={false}
+          variation="default"
+          {...getOverrideProps(overrides, "Button")}
+        ></Button>
+      </View>
       <Flex
-        gap="16px"
+        gap="0"
         direction="column"
         width="unset"
-        height="unset"
+        height="106px"
         justifyContent="flex-start"
         alignItems="flex-start"
         shrink="0"
@@ -71,7 +113,7 @@ export default function NoteCard(props) {
             fontWeight="700"
             color="rgba(13,26,38,1)"
             lineHeight="20px"
-            textAlign="left"
+            textAlign="center"
             display="block"
             direction="column"
             justifyContent="unset"
@@ -84,8 +126,8 @@ export default function NoteCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={note?.name}
-            {...getOverrideProps(overrides, "$99 USD")}
+            children="Name of Restaurant"
+            {...getOverrideProps(overrides, "Name of Restaurant")}
           ></Text>
           <Text
             fontFamily="Inter"
@@ -93,7 +135,7 @@ export default function NoteCard(props) {
             fontWeight="400"
             color="rgba(13,26,38,1)"
             lineHeight="24px"
-            textAlign="left"
+            textAlign="center"
             display="block"
             direction="column"
             justifyContent="unset"
@@ -107,16 +149,16 @@ export default function NoteCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={note?.description}
-            {...getOverrideProps(overrides, "4bds 3 ba 2,530 sqft - Active")}
+            children="Writer/Author"
+            {...getOverrideProps(overrides, "Writer/Author")}
           ></Text>
           <Text
             fontFamily="Inter"
-            fontSize="14px"
+            fontSize="16px"
             fontWeight="400"
-            color="rgba(48,64,80,1)"
+            color="rgba(13,26,38,1)"
             lineHeight="24px"
-            textAlign="left"
+            textAlign="center"
             display="block"
             direction="column"
             justifyContent="unset"
@@ -129,8 +171,8 @@ export default function NoteCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={note?.author}
-            {...getOverrideProps(overrides, "832 34th Ave, Seattle, WA 98122")}
+            children="Description of Review"
+            {...getOverrideProps(overrides, "Description of Review")}
           ></Text>
         </Flex>
       </Flex>
